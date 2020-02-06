@@ -12,12 +12,12 @@ app.use( session({
 }) );
 
 app.get( '/say',(req,res)=> {
-  res.json(req.body);
+  res.json(req.query);
 });
 
 app.get('/set',(req,res)=>{
   req.session.counter = req.session.counter + 1;
-  req.session.data = req.body;
+  req.session.data = req.query;
   res.json(req.session.counter);
 });
 
